@@ -2,14 +2,21 @@
 
 <h1> Create a New user </h1>
 
-<%= form_for @user, url: {action: "new"} do  |f| %>
+<%= form_for(@user) do  |f| %>
+    
+    
     <%= f.label :name %><br />
     <%= f.text_field :name %>
     <br/>
+    <p>
     <%= f.label :email %><br />
     <%= f.text_field :email %>
+    </p>
     <br/>
-    <%= f.submit %><br />
 
-    <%= link_to 'back' ,users_index_path %>
+    <%= f.submit %>
+    
+    <br />
+
+    <%= link_to 'back' , users_index_path %>
 <% end %>

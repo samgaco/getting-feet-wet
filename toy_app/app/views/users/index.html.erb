@@ -1,4 +1,18 @@
 <h1>Users#index</h1>
-<h3>name email</h3>
+<h3>Name   Email</h3>
+
+
+  
+<% @users.each do |user| %>
+		<%= user.name%>   <%= user.email%>   
+        <br>
+
+
+	  <% end %>
+  
+  
+
+
+
 <%=link_to 'new user' , users_new_path %>
 
