@@ -1,5 +1,16 @@
-<h1>User#index</h1>
-<h1>name email</h1>
+<h1>Edit a Users</h1>
 
-<%= link_to 'new user' , user_new_path %>
+<%= form_for @edit_user   do  |f| %>
+    
+    <%= f.label :name %> <br />
+    <%= f.text_field :name %>
+    <br/>
+    <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+    </p>
+    <br/>
 
+    <%= f.submit %>
+    
+<% end %>
