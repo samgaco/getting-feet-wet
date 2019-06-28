@@ -1,7 +1,7 @@
 
 <h1> Create a New user </h1>
 
-<%= form_for @new_users ,url: {action: 'create'} do  |f| %>
+<%= form_for @user ,url: {action: 'create'} do  |f| %>
     
     <%= f.label :name %><br />
     <%= f.text_field :name %>

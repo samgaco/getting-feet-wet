@@ -6,14 +6,14 @@ class UsersController < ApplicationController
   end
 
   def new 
-    @new_users = User.new
+    @user = User.new
   end
 
   def create
-    @new_user = User.new(users_params)
-    @new_user.save
-    flash.notice = "user '#{@new_user.name}' added!"
-    redirect_to User.find(@new_user.id)
+    @user = User.new(users_params)
+    @user.save
+    flash.notice = "user '#{@user.name}' added!"
+    redirect_to User.find(@user.id)
   end 
   
   def show 
@@ -21,14 +21,21 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @edit_user = User.find_by(params[:id])
+    @user = User.find(params[:id])
   end
   
   def update
-    @user = User.find_by(params[:id])
+    @user = User.find(params[:id])
     @user.update(users_params)
     flash.notice = "user '#{@user.name}' Updated!"
     redirect_to user_path
   end
+
+  def destroy 
+    @user = User.find(params[:id])
+    @user.destroy
+    flash.notice = "User #{@user.name} has been destroyed!!"
+    redirect_to users_path
+  end 
 
 end
